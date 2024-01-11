@@ -24,17 +24,16 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-let firstArr = [];
-let secondArr = [];
 function sumOfNums (arr) {
     let sum = arr.reduce((total, number) => {
         return total + number
     }, 0)
     return sum
 };
-
 function validateCred(arr) {
     let largo = arr.length - 1;
+    let firstArr = [];
+    let secondArr = [];
 
     for (let i = largo; i >= 0; i -= 2) {
         let check = arr[i];
@@ -60,8 +59,7 @@ function validateCred(arr) {
     }
     return false;
     
-}
-
+};
 function findInvalidCards(arr) {
     let result = [];
     let largo = arr.length;
@@ -73,8 +71,7 @@ function findInvalidCards(arr) {
         }
     }
     return result;
-}
-
+};
 function idInvalidCardCompanies(arr) {
     let companies = [];
     let largo = arr.length;
@@ -103,15 +100,21 @@ function idInvalidCardCompanies(arr) {
         }
     };
     return companies
-}
+};
+function convertStr (str) {
+    let separate = [];
+    for (let i = 0; i < str.length; i++) {
+        separate.push(parseInt(str[i]))
+    }
+    return separate;
+};
 
-let invalidArr = findInvalidCards(batch)
 
+let invalidArr = findInvalidCards(batch);
 // console.log(validateCred(mystery5));
-console.log(findInvalidCards(batch))
-console.log(idInvalidCardCompanies(invalidArr))
-
-
+// console.log(findInvalidCards(batch))
+// console.log(idInvalidCardCompanies(invalidArr))
+// console.log(convertStr('563154616315'))
 
 
 
